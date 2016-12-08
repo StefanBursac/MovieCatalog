@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Movicatalog"
         mc:Ignorable="d"
-        Title="MainWindow" Height="455" Width="640">
+        Title="Movie Catalog" Height="455" Width="640"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
@@ -16,20 +17,22 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            
         </Grid.ColumnDefinitions>
 
-        <DataGrid Name="MovieListDataGrid" Grid.Row="0"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Width="277" >
-            <Button Name="Add" Content="Add" Grid.Row="1" Width="80" Height="25" Margin="5" />
-            <Button Name="Edit" Content="Edit" Grid.Row="1" Width="80" Height="25" Margin="5"/>
-            <Button Name="Delete" Content="Delete" Grid.Row="1" Width="80" Height="25" Margin="5"/>
+        <DataGrid Name="MovieListDataGrid" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,0,5">
+            <Button Name="Add" Content="Add" Grid.Row="1" Width="94" Height="25" Margin="5" Click="Add_Click" VerticalAlignment="Top" />
+            <Button Name="Edit" Content="Edit" Grid.Row="1" Width="94" Height="25" Margin="5" VerticalAlignment="Top"/>
+            <Button Name="Delete" Content="Delete" Grid.Row="1" Width="94" Height="25" Margin="5" VerticalAlignment="Top"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="5,0,0,10">
 
-            <Button Name="Import" Content="Import" Grid.Row="2" Width="80" Height="25" Margin="5,14"/>
-            <Button Name="Export" Content="Export" Width="80" Height="25" Margin="5,14" />
+            <Button Name="Import" Content="Import" Grid.Row="2" Width="95" Height="25" Margin="5" VerticalAlignment="Bottom"/>
+            <Button Name="Export" Content="Export" Width="95" Height="25" Margin="5" VerticalAlignment="Bottom" />
 
         </StackPanel>
-        <Button Name="Exit" Content="Exit" Width="80" Height="25" Margin="0,14,10,25" Grid.Row="2" HorizontalAlignment="Right" Click="Exit_Click"/>
+        <Button Name="Exit" Content="Exit" Width="94" Height="25" Grid.Row="2" Grid.Column="1" HorizontalAlignment="right" Click="Exit_Click" Margin="0,5,5,15" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

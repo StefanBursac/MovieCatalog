@@ -38,7 +38,7 @@ namespace MovieCatalog
             sb.Append((bool)Tablet.IsChecked ? "Tablet" : "");
             sb.Append("Your yob ");
             sb.Append(Job.SelectedItem.ToString());
-            sb.Append("Delivery Date");
+            sb.Append("Delivery Date");Job.SelectedItem.ToString();
             sb.Append(DeliveryDate.SelectedDate.ToString());
             MessageBox.Show(sb.ToString(), "Results");
 
