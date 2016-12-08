@@ -29,8 +29,8 @@ namespace Movicatalog
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
 
-            MessageBox.Show("Are you sure do you want to exit?");
-            Close();
+            MessageBox.Show("Are you sure do you want to exit?","");
+      
         }
     }
 }
