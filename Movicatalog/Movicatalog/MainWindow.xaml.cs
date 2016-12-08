@@ -20,8 +20,12 @@ namespace Movicatalog
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<string> movieList;
+        
         public MainWindow()
         {
+            
+
             InitializeComponent();
             
         }
@@ -39,6 +43,19 @@ namespace Movicatalog
         {
             AddDialogWindow addWindow = new AddDialogWindow();
             addWindow.ShowDialog();
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            EditDialogWindow editMovie = new EditDialogWindow();
+            editMovie.ShowDialog();
+
+        }
+
+        public List<string> MovieCollection
+        {
+            get { return movieList; }
+            set { movieList = value; }
         }
     }
 }
