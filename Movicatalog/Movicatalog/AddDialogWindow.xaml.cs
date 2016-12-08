@@ -10,35 +10,35 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Movicatalog
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddDialogWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddDialogWindow : Window
     {
-        public MainWindow()
+        public AddDialogWindow()
         {
             InitializeComponent();
-            
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            Close();
-                  
-
-            
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
+        private void Calendar_SelectedDatesChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            AddDialogWindow addWindow = new AddDialogWindow();
-            addWindow.ShowDialog();
+
+        }
+
+        private void CalendarDayButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+          
         }
     }
 }
