@@ -20,7 +20,8 @@ namespace Movicatalog
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<string> movieList;
+        public List<string> movieList;
+
         
         public MainWindow()
         {

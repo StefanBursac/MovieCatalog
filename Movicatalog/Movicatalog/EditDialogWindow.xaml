@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Movicatalog"
         mc:Ignorable="d"
         Title="Edit Movie" Height="300" Width="300"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+            
         
     <Grid>
         <Grid.RowDefinitions>
