@@ -26,12 +26,13 @@
             Grid.Row="0" 
             Grid.ColumnSpan="2" 
             Background="Gray"
+            AlternatingRowBackground="LightBlue"
             AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Genre" Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Director" Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Release Date" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Genre" Binding="{Binding Genre}"/>
+                <DataGridTextColumn Header="Director" Binding="{Binding Director}"/>
+                <DataGridTextColumn Header="Release Date" Binding="{Binding Date}"/>
             </DataGrid.Columns>
         </DataGrid>
             

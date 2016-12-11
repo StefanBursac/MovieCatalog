@@ -20,24 +20,22 @@ namespace Movicatalog
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<string> movieList;
 
-        
+
+
         public MainWindow()
         {
-            
-
             InitializeComponent();
-            
+            MovieListDataGrid.ItemsSource = Movie.GetMovies();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
 
             Close();
-                  
 
-            
+
+
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -53,10 +51,5 @@ namespace Movicatalog
 
         }
 
-        public List<string> MovieCollection
-        {
-            get { return movieList; }
-            set { movieList = value; }
-        }
     }
 }
