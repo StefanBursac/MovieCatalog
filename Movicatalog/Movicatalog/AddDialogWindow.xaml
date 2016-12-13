@@ -37,20 +37,15 @@
             </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="3" Margin="5">
-            <TextBox Width=" 150" Height="25" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" TextChanged="TextBox_TextChanged" />
-            <ComboBox Grid.Row="1" Width="150" Height="25" Margin="5" Grid.Column="1" HorizontalAlignment="Left">
-                <ComboBoxItem Content="Action"/>
-                <ComboBoxItem Content="Sci-Fi"/>
-                <ComboBoxItem Content="Fantasy"/>
-                <ComboBoxItem Content="Family"/>
-            </ComboBox>
+            <TextBox Name="MovieNametb" Width=" 150" Height="25" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox Grid.Row="1" Width="150" Height="25" Margin="5" Grid.Column="1" HorizontalAlignment="Left" />
             <TextBox Width=" 150" Height="25" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Grid.Column="1"/>
 
             <DatePicker Grid.Row="3" Grid.Column="1" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
         </StackPanel>
         <StackPanel  Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="5">
             <Button Content="OK" Width="60" Height="20" Margin="5" Click="Button_Click"/>
-            <Button Content="Cancel" Width="60" Height="20" Margin="5" Click="Button_Click_1"/>
+            <Button Content="Cancel" Width="60" Height="20" Margin="5"/>
         </StackPanel>
     </Grid>
 </Window>

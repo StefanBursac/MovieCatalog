@@ -20,16 +20,32 @@ namespace Movicatalog
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-        
+
+
+
         public MainWindow()
         {
-            InitializeComponent();  
+            InitializeComponent();
+            MovieListDataGrid.ItemsSource = Movie.GetMovies();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            string exitQuestion = "Are You sure You want to Exit?";
+            string exitWindowsTitle = "Exit";
+            MessageBoxButton buttons = MessageBoxButton.YesNo;
+            MessageBoxResult result;
+            result = MessageBox.Show(exitQuestion,exitWindowsTitle,buttons,MessageBoxImage.Question);
+            
+            if (result == MessageBoxResult.Yes )
+            {
+                Close();     
+            }
+            else
+            {
+                
+            }
+
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -45,6 +61,9 @@ namespace Movicatalog
 
         }
 
-      
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

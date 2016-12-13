@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace Movicatalog
         public AddDialogWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
@@ -41,20 +43,25 @@ namespace Movicatalog
           
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder MovieName = new StringBuilder();
+            StringBuilder MovieGenre = new StringBuilder();
+            StringBuilder MovieDirector = new StringBuilder();
+            DatePicker ReleaseDate = new DatePicker();
+
+            MovieName.Append(MovieNametb);
+            MovieName.ToString();
             
-        }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
+           
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Movie m = new Movie();
-            m.AddMovie(Name);
-        }
-    }
+       
+
+            
+
+
 }
+}
+
