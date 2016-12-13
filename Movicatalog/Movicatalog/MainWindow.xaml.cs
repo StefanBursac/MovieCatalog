@@ -31,10 +31,20 @@ namespace Movicatalog
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
-            Close();
-
-
+            string exitQuestion = "Are You sure You want to Exit?";
+            string exitWindowsTitle = "Exit";
+            MessageBoxButton buttons = MessageBoxButton.YesNo;
+            MessageBoxResult result;
+            result = MessageBox.Show(exitQuestion,exitWindowsTitle,buttons,MessageBoxImage.Question);
+            
+            if (result == MessageBoxResult.Yes )
+            {
+                Close();     
+            }
+            else
+            {
+                
+            }
 
         }
 
@@ -51,5 +61,9 @@ namespace Movicatalog
 
         }
 
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
