@@ -20,23 +20,16 @@ namespace Movicatalog
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<string> movieList;
+        
         
         public MainWindow()
         {
-            
-
-            InitializeComponent();
-            
+            InitializeComponent();  
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
             Close();
-                  
-
-            
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -52,10 +45,6 @@ namespace Movicatalog
 
         }
 
-        public List<string> MovieCollection
-        {
-            get { return movieList; }
-            set { movieList = value; }
-        }
+      
     }
 }

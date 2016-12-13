@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace Movicatalog
 {
     public class Movie
-    {
+    {   
+        
+
         private string name;
         private string genre;
         private string director;
@@ -40,5 +42,21 @@ namespace Movicatalog
             get { return date; }
             set { date = value; }
         }
+
+        List <string> myList = new List<string>();
+        
+        public void AddMovie()
+        {
+                     
+        }
+        
+           
+        
+        
+        
+
+
+
+
     }
 }

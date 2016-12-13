@@ -21,7 +21,14 @@
             
         </Grid.ColumnDefinitions>
 
-        <DataGrid Name="MovieListDataGrid" Grid.Row="0" Grid.ColumnSpan="2" Background="Gray"/>
+        <DataGrid Name="MovieListDataGrid" Grid.Row="0" Grid.ColumnSpan="2" Background="Gray" AutoGenerateColumns="False" ItemsSource="{Binding}">
+            <DataGrid.Columns>
+            <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Genre"/>
+                <DataGridTextColumn Header="Director"/>
+                <DataGridTextColumn Header="Release Date"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,0,5">
             <Button Name="Add" Content="Add" Grid.Row="1" Width="94" Height="25" Margin="5" Click="Add_Click" VerticalAlignment="Top" />
             <Button Name="Edit" Content="Edit" Grid.Row="1" Width="94" Height="25" Margin="5" VerticalAlignment="Top" Click="Edit_Click"/>

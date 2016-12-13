@@ -45,5 +45,16 @@ namespace Movicatalog
         {
             
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Movie m = new Movie();
+            m.AddMovie(Name);
+        }
     }
 }
