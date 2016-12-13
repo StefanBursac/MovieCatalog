@@ -10,7 +10,7 @@ using System.Windows.Controls;
 
 namespace Movicatalog
 {
-    public class Movie
+    public class Movie 
     {
         private string name;
         private string genre;
