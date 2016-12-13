@@ -61,10 +61,11 @@ namespace Movicatalog
 
             movies.Add(new Movie() { Name = "Dark Knight", Genre = "Action", Director = "Christopher Nolan ", Date = new DateTime(2007, 1, 6) });
             movies.Add(new Movie() { Name = "Avatar", Genre = "Fantasy", Director = "James Cameroon", Date = new DateTime(2011, 12, 6) });
-            movies.Add(new Movie() { Name = "The Lord of the Rings: The Return of the King", Genre = "Fantasy", Director = "Peter Jackson",Date =new DateTime(2003,12,17) });
+            movies.Add(new Movie() { Name = "The Lord of the Rings: The Return of the King", Genre = "Fantasy", Director = "Peter Jackson", Date = new DateTime(2003, 12, 17) });
             movies.Add(new Movie() { Name = "The Good, the Bad and the Ugly", Genre = "Western", Director = "Sergio Leone", Date = new DateTime(1967, 12, 19) });
             movies.Add(new Movie() { Name = "Forrest Gump", Genre = "Drama", Director = "Robert Zemeckis", Date = new DateTime(1994, 7, 6) });
             movies.Add(new Movie() { Name = "The Matrix", Genre = "Sci-Fi", Director = "Wachowski Brother and Sister", Date = new DateTime(1999, 3, 31) });
+            movies.Add(new Movie() { Name = "The Avengers", Genre = "Action", Director = "Joss Wedon", Date = new DateTime(2012, 5, 2) });
 
             return movies;
         }

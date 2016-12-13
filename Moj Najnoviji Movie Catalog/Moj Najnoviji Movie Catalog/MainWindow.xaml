@@ -1,0 +1,16 @@
+﻿<Window x:Class="Moj_Najnoviji_Movie_Catalog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Moj_Najnoviji_Movie_Catalog"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="button" Content="Add" HorizontalAlignment="Left" Margin="320,240,0,0" VerticalAlignment="Top" Width="135" Click="button_Click" Height="45"/>
+        <DataGrid Margin="0,0,0,159">
+            <TextBox Text="{Binding Movie}"/>
+
+        </DataGrid>
+    </Grid>
+</Window>
