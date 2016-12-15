@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,38 +21,26 @@ namespace Movicatalog
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
-
+        public ObservableCollection<Movie> Movies = new ObservableCollection<Movie>();
+        
         public MainWindow()
-        {
+        {   
             InitializeComponent();
-            MovieListDataGrid.ItemsSource = Movie.GetMovies();
+            Movies = Movie.GetMovies();
+
+            dataGrid.ItemsSource = Movies;
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            string exitQuestion = "Are You sure You want to Exit?";
-            string exitWindowsTitle = "Exit";
-            MessageBoxButton buttons = MessageBoxButton.YesNo;
-            MessageBoxResult result;
-            result = MessageBox.Show(exitQuestion,exitWindowsTitle,buttons,MessageBoxImage.Question);
-            
-            if (result == MessageBoxResult.Yes )
-            {
-                Close();     
-            }
-            else
-            {
-                
-            }
-
-        }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
+       private void Add_Click(object sender, RoutedEventArgs e)
         {
             AddDialogWindow addWindow = new AddDialogWindow();
-            addWindow.ShowDialog();
+            if (addWindow.ShowDialog() == true)
+            {
+                Movies.Add(addWindow.movie);
+                dataGrid.Items.Refresh();
+            }
+
+           
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
@@ -63,6 +52,23 @@ namespace Movicatalog
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            string exitQuestion = "Are You sure You want to Exit?";
+            string exitWindowsTitle = "Exit";
+            MessageBoxButton buttons = MessageBoxButton.YesNo;
+            MessageBoxResult result;
+            result = MessageBox.Show(exitQuestion, exitWindowsTitle, buttons, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Close();
+            }
 
         }
     }

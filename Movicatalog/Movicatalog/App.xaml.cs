@@ -13,6 +13,6 @@ namespace Movicatalog
     /// </summary>
     public partial class App : Application
     {
-
+       
     }
 }

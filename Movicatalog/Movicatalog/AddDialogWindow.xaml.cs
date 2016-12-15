@@ -20,48 +20,24 @@ namespace Movicatalog
     /// </summary>
     public partial class AddDialogWindow : Window
     {
+        public Movie movie
+        {
+            get; set;
+        }
         public AddDialogWindow()
         {
             InitializeComponent();
-            
         }
 
-        private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Calendar_SelectedDatesChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void CalendarDayButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            
-          
-        }
-
-        public void Button_Click(object sender, RoutedEventArgs e)
-        {
-            StringBuilder MovieName = new StringBuilder();
-            StringBuilder MovieGenre = new StringBuilder();
-            StringBuilder MovieDirector = new StringBuilder();
-            DatePicker ReleaseDate = new DatePicker();
-
-            MovieName.Append(MovieNametb);
-            MovieName.ToString();
+            movie = new Movie();
+            movie.Name = Name.Text;
             
 
-        }
-           
-
-       
-
             
-
-
+            this.DialogResult = true;
+            this.Close();
+        }
+    }
 }
-}
-

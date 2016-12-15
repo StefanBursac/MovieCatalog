@@ -22,7 +22,8 @@
         </Grid.ColumnDefinitions>
 
         <DataGrid 
-            Name="MovieListDataGrid" 
+            x:Name="dataGrid"
+            
             Grid.Row="0" 
             Grid.ColumnSpan="2" 
             Background="Gray"

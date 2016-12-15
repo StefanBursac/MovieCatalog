@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace Moj_Najnoviji_Movie_Catalog
 {
-    public class Movie
+    public enum Genre { Action, Fantasy, Comedy, SciFi }
+
+    public class Movie : AddWindow
     {
-        public List<string> listaFilmova = new List<string>();
+
+        AddWindow addw = new AddWindow();
+
+        
 
 
-       
-
+        public List<string> Lista = new List<string>(); 
+         
+        
+               
     }
 }

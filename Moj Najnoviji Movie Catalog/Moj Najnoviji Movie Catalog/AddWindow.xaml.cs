@@ -25,14 +25,11 @@ namespace Moj_Najnoviji_Movie_Catalog
         }
         
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        public void button_Click(object sender, RoutedEventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(textBox);
             Movie m = new Movie();
-            m.listaFilmova.Add(sb.ToString());
-            m.listaFilmova.Add("saaaSas"); 
-           
+            m.Lista.Add(textBox.Text);
+
         }
 
 

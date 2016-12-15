@@ -10,10 +10,10 @@ using System.Windows.Controls;
 
 namespace Movicatalog
 {
-    public class Movie 
+    public class Movie : INotifyPropertyChanged
     {
         private string name;
-        private string genre;
+        private Genre _genre;
         private string director;
         private DateTime date;
 
@@ -25,11 +25,14 @@ namespace Movicatalog
 
         }
 
-        public string Genre
+        public Genre zanr
         {
-            get { return genre; }
+            get { return _genre; }
 
-            set { genre = value; }
+            set
+            { _genre = value;
+                RaisePropertyChanged();
+            }
         }
 
         public string Director
@@ -44,8 +47,44 @@ namespace Movicatalog
             get { return date; }
             set { date = value; }
         }
-    }
 
+        public static ObservableCollection<Movie> GetMovies()
+        {
+            var movies = new ObservableCollection<Movie>();
+
+            movies.Add(new Movie() { Name = "Dark Knight", _genre = Genre.Action, Director = "Cristopher Nolan", Date = new DateTime(2007, 1, 1) });
+            movies.Add(new Movie() { Name = "Avatar", _genre = Genre.Fantasy,Director = "James Cameroon", Date = new DateTime(2011, 12, 12) });
+            movies.Add(new Movie() { Name = "The Matrix", _genre = Genre.SciFi , Director = "Wachowski Brother and Sister", Date = new DateTime(2007, 1, 1) });
+            movies.Add(new Movie() { Name = "The Avengers", _genre = Genre.Action, Director = "Marvel Studios", Date = new DateTime(2011, 12, 12) });
+
+            return movies;
+        }
+
+
+
+        public enum Genre
+        {
+            Action,
+            Fantasy,
+            Comedy,
+            SciFi,
+            Drama
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void RaisePropertyChanged(
+            [CallerMemberName] string caller = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(caller));
+            }
+        }
+            
+
+
+    }
 }
 
 

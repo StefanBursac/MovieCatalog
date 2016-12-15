@@ -20,11 +20,13 @@ namespace Moj_Najnoviji_Movie_Catalog
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<string> Lista = new List<string>();
+
         public MainWindow()
         {
             InitializeComponent();
-            Movie m = new Movie();
-            DataContext = m;
+            
+                   
           
         }
 
@@ -32,6 +34,7 @@ namespace Moj_Najnoviji_Movie_Catalog
         {
             AddWindow addWindow = new AddWindow();
             addWindow.ShowDialog();
+            
         }
     }
 }
