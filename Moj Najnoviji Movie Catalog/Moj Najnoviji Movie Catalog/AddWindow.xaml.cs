@@ -18,23 +18,31 @@ namespace Moj_Najnoviji_Movie_Catalog
     /// Interaction logic for AddWindow.xaml
     /// </summary>
     public partial class AddWindow : Window
-    {
+    {   
+        Movie m = new Movie();
+        
+
         public AddWindow()
         {
             InitializeComponent();
+            
         }
         
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        public void button_Click(object sender, RoutedEventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(textBox);
-            Movie m = new Movie();
-            m.listaFilmova.Add(sb.ToString());
-            m.listaFilmova.Add("saaaSas"); 
-           
+            Movie n = new Movie();
+            n.Name = textBox.Text;
+            MainWindow l = new MainWindow();
+            l.listaFilmova.Add(n.Name);
+
+         
+            
+       }
+
+        public void UbaciFilm()
+        {
+            
         }
-
-
     }
 }
