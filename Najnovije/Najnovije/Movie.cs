@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Moj_Najnoviji_Movie_Catalog
+namespace Najnovije
 {
     public class Movie
     {
-        
+        List<string> lista = new List<string>();
 
         public string name;
 
@@ -19,11 +19,13 @@ namespace Moj_Najnoviji_Movie_Catalog
             set { name = value; }
         }
 
+        public string AddMovies(string movie)
+        {
+            lista.Add(movie);
 
+            return movie;
+        }
 
 
     }
-
-
-    }
-
+}

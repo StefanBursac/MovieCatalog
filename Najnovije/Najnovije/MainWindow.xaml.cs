@@ -13,29 +13,45 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Moj_Najnoviji_Movie_Catalog
+namespace Najnovije
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<string> listaFilmova = new List<string>();
-
+        public List<string> l = new List<string>();
+        Movie m = new Movie();
         public MainWindow()
-        {
+        {   
             InitializeComponent();
+
+            DataContext = m;
             
-            AddWindow add = new AddWindow();
-            add.button_Click();
-            DataContext = MainWindow;
-            
+
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            AddWindow addWindow = new AddWindow();
-            addWindow.ShowDialog();
+
+            string s = m.AddMovies(textBox.Text);
+            l.Add(s);
+            //textBox2.Text = s;
+            
+            foreach (string w in l) { textBox1.Text = w; }
+            foreach (string w in l) { m.Name = w; }
+            
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 w1 = new Window1();
+            w1.ShowDialog();
            
         }
     }

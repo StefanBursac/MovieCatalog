@@ -13,30 +13,32 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Moj_Najnoviji_Movie_Catalog
+namespace SimpleBindingExersize
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        public List<string> listaFilmova = new List<string>();
-
+    {   Movie m = new Movie();
         public MainWindow()
         {
             InitializeComponent();
-            
-            AddWindow add = new AddWindow();
-            add.button_Click();
-            DataContext = MainWindow;
-            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            AddWindow addWindow = new AddWindow();
-            addWindow.ShowDialog();
-           
+            
+
+            foreach (string n in m.movieList)
+            {
+                textBox1.Text = n;
+            }
+            m.AddMovie();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+           m.movieList.Add(textBox.Text);
         }
     }
 }
