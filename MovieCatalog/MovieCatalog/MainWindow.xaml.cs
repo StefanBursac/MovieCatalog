@@ -40,7 +40,7 @@ namespace MovieCatalog
             sb.Append(Job.SelectedItem.ToString());
             sb.Append("Delivery Date");Job.SelectedItem.ToString();
             sb.Append(DeliveryDate.SelectedDate.ToString());
-            MessageBox.Show(sb.ToString(), "Results");
+            MessageBox.Show(sb.ToString(), "Results");dzvcbnm, khgdsa\szdghn km,jhgfdsaSDFGHJGRFWASDF
 
         }
 
