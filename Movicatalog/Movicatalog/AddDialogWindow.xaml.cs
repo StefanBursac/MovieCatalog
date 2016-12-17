@@ -34,6 +34,7 @@ namespace Movicatalog
             movie = new Movie();
             movie.Name = Name.Text;
             
+            
 
             
             this.DialogResult = true;

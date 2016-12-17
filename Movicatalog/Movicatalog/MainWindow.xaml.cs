@@ -47,11 +47,17 @@ namespace Movicatalog
         {
             EditDialogWindow editMovie = new EditDialogWindow();
             editMovie.ShowDialog();
-
+                     
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult result;
+            result = MessageBox.Show("Are you sure ", "Delete Item", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                Movies.Remove((Movie)dataGrid.SelectedItem);
+            }
 
         }
 

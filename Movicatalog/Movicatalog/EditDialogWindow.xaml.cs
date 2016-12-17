@@ -18,10 +18,15 @@ namespace Movicatalog
     /// Interaction logic for EditDialogWindow.xaml
     /// </summary>
     public partial class EditDialogWindow : Window
-    {
+    {   
+        Movie m {get; set; }
+
         public EditDialogWindow()
         {
+
             InitializeComponent();
+            Movie movie = new Movie();
+            NameTextBox.Text = movie.Name;
         }
     }
 }
