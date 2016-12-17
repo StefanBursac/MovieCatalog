@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,26 +20,31 @@ namespace SimpleBindingExersize
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {   Movie m = new Movie();
+    {
+        Movie m = new Movie();
+        MainWindowsViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
+            viewModel = new MainWindowsViewModel();
+            DataContext = viewModel;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            
-
-            foreach (string n in m.movieList)
-            {
-                textBox1.Text = n;
-            }
-            m.AddMovie();
-        }
+            //string result = string.Empty;
+            //foreach (string n in m.movieList)
+            //{
+            //    result += n;
+            //}
+            //textBox1.Text = result;
+            //m.AddMovie();
+         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-           m.movieList.Add(textBox.Text);
+            //m.movieList.Add(textBox.Text);
+            viewModel.ListaStringova.Add(textBox.Text);
         }
     }
 }

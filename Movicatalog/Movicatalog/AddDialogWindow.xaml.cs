@@ -30,12 +30,12 @@ namespace Movicatalog
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {   
             movie = new Movie();
             movie.Name = Name.Text;
-            
+            movie.zanr = movie.zanr;
+            movie.Director = Director.Text;
 
-            
             this.DialogResult = true;
             this.Close();
         }

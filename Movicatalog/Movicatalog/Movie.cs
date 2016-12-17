@@ -25,6 +25,15 @@ namespace Movicatalog
 
         }
 
+        public enum Genre
+        {
+            Action,
+            Fantasy,
+            Comedy,
+            SciFi,
+            Drama
+        }
+
         public Genre zanr
         {
             get { return _genre; }
@@ -52,24 +61,18 @@ namespace Movicatalog
         {
             var movies = new ObservableCollection<Movie>();
 
-            movies.Add(new Movie() { Name = "Dark Knight", _genre = Genre.Action, Director = "Cristopher Nolan", Date = new DateTime(2007, 1, 1) });
-            movies.Add(new Movie() { Name = "Avatar", _genre = Genre.Fantasy,Director = "James Cameroon", Date = new DateTime(2011, 12, 12) });
-            movies.Add(new Movie() { Name = "The Matrix", _genre = Genre.SciFi , Director = "Wachowski Brother and Sister", Date = new DateTime(2007, 1, 1) });
-            movies.Add(new Movie() { Name = "The Avengers", _genre = Genre.Action, Director = "Marvel Studios", Date = new DateTime(2011, 12, 12) });
-
+            movies.Add(new Movie() { Name = "Dark Knight",  zanr = Genre.Action, Director = "Cristopher Nolan", Date = new DateTime(2007, 1, 1) });
+            movies.Add(new Movie() { Name = "Avatar", zanr = Genre.Fantasy, Director = "James Cameroon", Date = new DateTime(2011, 12, 12) });
+            movies.Add(new Movie() { Name = "The Matrix", zanr = Genre.SciFi, Director = "Wachowski Brother and Sister", Date = new DateTime(2007, 1, 1) });
+            movies.Add(new Movie() { Name = "The Avengers", zanr = Genre.Action, Director = "Marvel Studios", Date = new DateTime(2011, 12, 12) });
+            movies.Add(new Movie() { Name = "Star Wars - The Force Awakens", zanr = Genre.SciFi, Director = "Disney", Date = new DateTime(2015 / 12 / 6) });
+            
             return movies;
         }
 
 
 
-        public enum Genre
-        {
-            Action,
-            Fantasy,
-            Comedy,
-            SciFi,
-            Drama
-        }
+       
 
         public event PropertyChangedEventHandler PropertyChanged;
 

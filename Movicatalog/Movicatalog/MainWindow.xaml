@@ -27,11 +27,11 @@
             Grid.Row="0" 
             Grid.ColumnSpan="2" 
             Background="Gray"
-            AlternatingRowBackground="LightBlue"
+            AlternatingRowBackground="LightYellow"
             AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Genre" Binding="{Binding Genre}"/>
+                <DataGridTextColumn Header="Genre" Binding="{Binding zanr}"/>
                 <DataGridTextColumn Header="Director" Binding="{Binding Director}"/>
                 <DataGridTextColumn Header="Release Date" Binding="{Binding Date}"/>
             </DataGrid.Columns>
@@ -52,8 +52,8 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="5,0,0,10">
 
-            <Button Name="Import" Content="Import" Grid.Row="2" Width="95" Height="25" Margin="5" VerticalAlignment="Bottom"/>
-            <Button Name="Export" Content="Export" Width="95" Height="25" Margin="5" VerticalAlignment="Bottom" />
+            <Button Name="Import" Content="Import" Grid.Row="2" Width="95" Height="25" Margin="5" VerticalAlignment="Bottom" Click="Import_Click"/>
+            <Button Name="Export" Content="Export" Width="95" Height="25" Margin="5" VerticalAlignment="Bottom" Click="Export_Click" />
 
         </StackPanel>
         <Button Name="Exit" Content="Exit" Width="94" Height="25" Grid.Row="2" Grid.Column="1" HorizontalAlignment="right" Click="Exit_Click" Margin="0,5,5,15" VerticalAlignment="Bottom"/>

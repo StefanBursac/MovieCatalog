@@ -9,7 +9,11 @@
     <Grid>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="185" Margin="280,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
         <Button x:Name="button" Content="Go" HorizontalAlignment="Left" Margin="35,265,0,10" Width="165" Click="button_Click"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="35,40,0,94" TextWrapping="Wrap" Width="215"/>
+        <DataGrid x:Name="Lista" HorizontalAlignment="Left" Margin="35,40,0,94" ItemsSource="{Binding ListaStringova}" Width="215" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Value" Binding="{Binding}" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="280,265,0,0" VerticalAlignment="Top" Width="175" Height="45" Click="button1_Click"/>
 
     </Grid>
