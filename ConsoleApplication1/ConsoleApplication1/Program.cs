@@ -14,7 +14,7 @@ namespace ConsoleApplication1
             Movie m = new Movie();
             Console.WriteLine(m.Ubaci("Stefan"));
             Console.WriteLine(m.Ubaci("Bursac"));
-
+            
             Console.WriteLine(m.Lista);
 
 
