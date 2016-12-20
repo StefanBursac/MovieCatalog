@@ -30,10 +30,9 @@ namespace Movicatalog
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {   
             movie = new Movie();
             movie.Name = Name.Text;
-            
             
 
             

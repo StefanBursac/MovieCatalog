@@ -32,11 +32,11 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="3" Margin="5">
-            <TextBox x:Name="NameTextBox" Width=" 150" Height="25" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" TextChanged="TextBox_TextChanged"/>
-            <ComboBox Grid.Row="1" Width="150" Height="25" Margin="5" Grid.Column="1" HorizontalAlignment="Left" />
-            <TextBox Width=" 150" Height="25" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Grid.Column="1"/>
+            <TextBox x:Name="textBoxName" Width=" 150" Height="25" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox x:Name="ComboBox" Grid.Row="1" Width="150" Height="25" Margin="5" Grid.Column="1" HorizontalAlignment="Left" />
+            <TextBox Name="textBoxDirector" Width=" 150" Height="25" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Grid.Column="1"/>
 
-            <DatePicker Grid.Row="3" Grid.Column="1" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+            <DatePicker Name="textBoxDate" Grid.Row="3" Grid.Column="1" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
         </StackPanel>
         <StackPanel  Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="5">
             <Button Content="OK" Width="60" Height="20" Margin="5"/>

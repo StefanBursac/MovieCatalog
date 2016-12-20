@@ -8,6 +8,8 @@
         Title="AddMovie" Height="300" Width="300"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
+   
+        
 
 
     <Grid>
@@ -38,9 +40,7 @@
 
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="3" Margin="5">
             <TextBox x:Name="Name" Width="150" Height="25" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
-            <ComboBox x:Name="zenre" Grid.Row="1" Width="150" Height="25" Margin="5" Grid.Column="1" HorizontalAlignment="Left">
-            <ComboBoxItem>Action</ComboBoxItem>
-            </ComboBox>
+            <ComboBox x:Name="zenre" Grid.Row="1" Width="150" Height="25" Margin="5" Grid.Column="1" HorizontalAlignment="Left"/>
             <TextBox x:Name="Director" Width=" 150" Height="25" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Grid.Column="1"/>
 
             <DatePicker Grid.Row="3" Grid.Column="1" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
