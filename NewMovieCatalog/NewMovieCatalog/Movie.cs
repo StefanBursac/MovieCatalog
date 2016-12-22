@@ -9,9 +9,6 @@ namespace NewMovieCatalog
 {
     class Movie
     {
-        
-
-        
 
        public string MovieName { get; set;}
 

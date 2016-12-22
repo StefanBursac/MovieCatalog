@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewMovieCatalog"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="402" Width="544">
     <Grid>
-        <Button x:Name="button" Content="Add" HorizontalAlignment="Left" Margin="300,270,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-1.533,-2" Click="button_Click"/>
-        <Button x:Name="button1" Content="Edit" HorizontalAlignment="Left" Margin="390,270,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="175" Margin="30,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" />
+
+        <Button x:Name="button" Content="Add" HorizontalAlignment="Left" Margin="255,270,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-1.533,-2" Click="button_Click"/>
+        <Button x:Name="button1" Content="Edit" HorizontalAlignment="Left" Margin="335,270,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="50,35,0,0" VerticalAlignment="Top" Height="200" Width="440"/>
+        <Button x:Name="button2" Content="Exit" HorizontalAlignment="Left" Margin="415,325,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click" RenderTransformOrigin="0.867,0.25"/>
+        <Button x:Name="button3" Content="Import" HorizontalAlignment="Left" Margin="50,325,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
+        <Button x:Name="button3_Copy" Content="Export" HorizontalAlignment="Left" Margin="130,325,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button3_Copy1" Content="Delete" HorizontalAlignment="Left" Margin="415,270,0,0" VerticalAlignment="Top" Width="75" Click="button3_Copy1_Click"/>
 
     </Grid>
 </Window>
