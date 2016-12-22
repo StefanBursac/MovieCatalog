@@ -21,29 +21,41 @@ namespace NewMovieCatalog
     public partial class MainWindow : Window
     {
 
-        
+        MovieList movieList = new MovieList();
 
         public MainWindow()
         {
             InitializeComponent();
+            dataGrid.ItemsSource = movieList.AllMovies;
 
+            movieList.AddMovie();
+           
             
+        }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditWindow AddWindow = new AddEditWindow();
+            AddWindow.Show();
+           
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditWindow editWindow = new AddEditWindow();
+            editWindow.Show();
+           // editWindow.textBoxMovieName = dataGrid.SelectedItem);?????
 
         }
 
-        public void button_Click(object sender, RoutedEventArgs e)
-        { 
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {       
+            movieList.AllMovies.Remove((Movie)dataGrid.SelectedItem);
+        }
 
-            Movie movie = new Movie();
-            MovieList movieList = new MovieList();
-            movie.MovieName = textBox.Text;
-            movieList.AllMovies.Add(movie);
-
-
-
-
-
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 
