@@ -25,7 +25,7 @@ namespace NewMovieCatalog
         public AddEditWindow()
         {
             InitializeComponent();
-            
+            MainWindow main = new MainWindow();
            
 
 
@@ -33,13 +33,10 @@ namespace NewMovieCatalog
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        public void Ok_Click(object sender, RoutedEventArgs e)
         {
-            MovieList list = new MovieList();
-            Movie m = new Movie();
-            m.MovieName = textBoxMovieName.Text;
-            m.Director = textBoxDirector.Text;
-            list.AllMovies.Add(m);
+            
+            
             Close();
         }
     }

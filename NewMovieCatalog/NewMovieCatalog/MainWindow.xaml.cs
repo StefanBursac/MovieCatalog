@@ -37,6 +37,9 @@ namespace NewMovieCatalog
         {
             AddEditWindow AddWindow = new AddEditWindow();
             AddWindow.Show();
+
+            
+            
            
         }
 

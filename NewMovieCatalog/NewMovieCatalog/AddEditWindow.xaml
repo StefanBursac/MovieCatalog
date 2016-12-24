@@ -15,7 +15,7 @@
         <TextBlock x:Name="textBlockDirector" HorizontalAlignment="Left" Margin="40,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Direcot"/><Run Text="o"/><Run Text="r"/><LineBreak/><Run/></TextBlock>
         <DatePicker HorizontalAlignment="Left" Margin="120,151,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlockDate" HorizontalAlignment="Left" Margin="40,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Date" Height="18"/>
-        <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="60,220,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="OKbutton" Content="OK" HorizontalAlignment="Left" Margin="60,220,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="165,220,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
