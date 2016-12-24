@@ -10,21 +10,16 @@ namespace NewMovieCatalog
     class Movie
     {
 
-       public string MovieName { get; set;}
+        public string MovieName { get; set;}
 
-       public enum Genre
-        {
-            Action,
-            Fantasy,
-            Comedy,
-            SciFi,
-        }
-        
-        public Genre genre {get; set;}
+        public enum Genre {Action,Fantasy,Comedy,SciFi}
+        public Genre genre { get; set; } 
 
         public string Director { get; set; }
 
         public DateTime Date { get; set; }
+
+
 
         
       

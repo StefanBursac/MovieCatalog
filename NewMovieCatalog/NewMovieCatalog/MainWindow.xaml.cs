@@ -22,44 +22,40 @@ namespace NewMovieCatalog
     {
 
         MovieList movieList = new MovieList();
-  
-        
 
         public MainWindow()
         {
             InitializeComponent();
             dataGrid.ItemsSource = movieList.AllMovies;
+
             movieList.AddMovie();
-
-
+           
+            
         }
 
-        public void button_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-            AddEditWindow addWindow = new AddEditWindow();
-            addWindow.ShowDialog();
+            AddEditWindow AddWindow = new AddEditWindow();
+            AddWindow.Show();
+           
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-           AddEditWindow editWindow = new AddEditWindow();
-           
-           editWindow.ShowDialog();
-        }
-
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
+            AddEditWindow editWindow = new AddEditWindow();
+            editWindow.Show();
+           // editWindow.textBoxMovieName = dataGrid.SelectedItem);?????
 
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
+        {       
+            movieList.AllMovies.Remove((Movie)dataGrid.SelectedItem);
         }
 
-        private void button3_Copy1_Click(object sender, RoutedEventArgs e)
+        private void button5_Click(object sender, RoutedEventArgs e)
         {
-            movieList.AllMovies.Remove((Movie)dataGrid.SelectedItem);
+            Close();
         }
     }
 

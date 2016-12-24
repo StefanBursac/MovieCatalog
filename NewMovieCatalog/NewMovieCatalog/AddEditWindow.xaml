@@ -5,19 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewMovieCatalog"
         mc:Ignorable="d"
-        Title="AddEditWindow" Height="322" Width="304">
+        Title="AddEditWindow" Height="300" Width="300">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="40,43,0,0" TextWrapping="Wrap" Text="Movie Name" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="40,96,0,0" TextWrapping="Wrap" Text="Genre" VerticalAlignment="Top" RenderTransformOrigin="0.63,2.82"/>
-        <ComboBox x:Name="comboBox" ItemsSource="{Binding genre}" HorizontalAlignment="Left" Margin="120,90,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="120,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding MovieName}"/>
-        <StackPanel HorizontalAlignment="Left" Height="15" Margin="120,200,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="40,150,0,0" TextWrapping="Wrap" Text="Director" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="120,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Director}"/>
-        <DatePicker x:Name="date" HorizontalAlignment="Left" Margin="120,190,0,0" VerticalAlignment="Top" Height="25" Width="117" DisplayDate="{Binding Date}"/>
-        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="39,194,0,0" TextWrapping="Wrap" Text="Release Date" VerticalAlignment="Top" RenderTransformOrigin="0.381,0.376"/>
-        <Button x:Name="button" Content="Cancel" HorizontalAlignment="Left" Margin="162,240,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button1" Content="OK" HorizontalAlignment="Left" Margin="82,240,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <TextBlock x:Name="textBlockMovieName" HorizontalAlignment="Left" Margin="40,35,0,0" TextWrapping="Wrap" Text="Movie Name" VerticalAlignment="Top" />
+        <TextBox x:Name="textBoxMovieName" HorizontalAlignment="Left" Height="23" Margin="120,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlockGenre" HorizontalAlignment="Left" Margin="40,75,0,0" TextWrapping="Wrap" Text="Genre" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxDirector" HorizontalAlignment="Left" Height="23" Margin="120,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="comboBoxGenre" HorizontalAlignment="Left" Margin="120,75,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlockDirector" HorizontalAlignment="Left" Margin="40,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Direcot"/><Run Text="o"/><Run Text="r"/><LineBreak/><Run/></TextBlock>
+        <DatePicker HorizontalAlignment="Left" Margin="120,151,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlockDate" HorizontalAlignment="Left" Margin="40,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Date" Height="18"/>
+        <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="60,220,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="165,220,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
