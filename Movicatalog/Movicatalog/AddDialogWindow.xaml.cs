@@ -33,11 +33,18 @@ namespace Movicatalog
         {   
             movie = new Movie();
             movie.Name = Name.Text;
+            movie.Director = Director.Text;
+            movie.Date = date.SelectedDate.Value;
             
 
             
             this.DialogResult = true;
             this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -36,7 +36,12 @@ namespace NewMovieCatalog
         private void button_Click(object sender, RoutedEventArgs e)
         {
             AddEditWindow AddWindow = new AddEditWindow();
-            AddWindow.Show();
+            if (AddWindow.DialogResult == true)
+            {
+                AddWindow.ShowDialog();
+                
+            }
+
 
             
             

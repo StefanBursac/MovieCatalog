@@ -17,6 +17,7 @@ namespace MojeVezbe
 
             funkcija.IspisiMojeIme("Stefan");
 
+            funkcija.IspisiNesto("Hello World",1000);
 
             Console.ReadLine();
         }

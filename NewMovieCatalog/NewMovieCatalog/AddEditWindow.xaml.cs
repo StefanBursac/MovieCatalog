@@ -25,9 +25,10 @@ namespace NewMovieCatalog
         public AddEditWindow()
         {
             InitializeComponent();
-            MainWindow main = new MainWindow();
-           
-
+            Movie m = new Movie();
+            m.MovieName = textBoxMovieName.Text;
+            m.Director = textBoxDirector.Text;
+            
 
 
 

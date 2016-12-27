@@ -13,13 +13,13 @@ namespace Domaci
 
             Computer comp = new Computer();
 
-            comp.cpu = " intel";
-            comp.motherBoard = " gigabyte";
-            comp.memory = " kingston4gb";
-            comp.hardDrive = " WD";
-            comp.graphicsCard = " nvidiageforce";
-            comp.soundCard = " realtek";
-            comp.operatingSystem = " windows 10";
+            comp.cpu = " Intel";
+            comp.motherBoard = " Gigabyte";
+            comp.memory = " Kingston 4gb";
+            comp.hardDrive = " Seagate";
+            comp.graphicsCard = " Nvidia Geforce";
+            comp.soundCard = " Realtek";
+            comp.operatingSystem = " Windows 10";
 
             comp.ShowConfiguration();
 
@@ -49,8 +49,8 @@ namespace Domaci
             Laptop lap = new Laptop();
             lap.cpu = " Intel ";
             lap.motherBoard = " Intel ";
-            lap.memory = " kingstone ";
-            lap.graphicsCard = " IntelHD400 ";
+            lap.memory = " Kingstone ";
+            lap.graphicsCard = " Intel HD400 ";
             lap.operatingSystem =" Windows 10 ";
             lap.hardDrive = " WD ";
             lap.soundCard = " Realtek ";

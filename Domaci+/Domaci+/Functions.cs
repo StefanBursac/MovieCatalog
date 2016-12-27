@@ -9,7 +9,7 @@ namespace Domaci_
     public class Functions
     {
 
-        public virtual void NaopisiTolikoPuta(string staNapisati, int kolikoPuta)
+        public virtual void NapisiTolikoPuta(string staNapisati, int kolikoPuta)
         {
             for (int i = 0; i < kolikoPuta; i++)
             {
@@ -26,10 +26,7 @@ namespace Domaci_
             return prosek;
         }
 
-     
-
-
-        }
+    }
 
 }
 

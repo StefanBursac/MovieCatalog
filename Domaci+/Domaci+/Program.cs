@@ -13,7 +13,7 @@ namespace Domaci_
 
             Functions funkcija = new Functions();
 
-            funkcija.NaopisiTolikoPuta("Ja se zovem Stefan", 20);
+            funkcija.NapisiTolikoPuta("Ja se zovem Stefan", 20);
 
 
             Console.WriteLine("--------------------------------");
@@ -28,16 +28,16 @@ namespace Domaci_
 
             Program p = new Program();
 
-            p.NaopisiTolikoPuta("Stefan",100);
+            p.NapisiTolikoPuta("Stefan",100);
 
             Console.ReadKey();
 
         }
 
 
-        public override void NaopisiTolikoPuta(string staNapisati, int kolikoPuta)
+        public override void NapisiTolikoPuta(string staNapisati, int kolikoPuta)
         {
-            base.NaopisiTolikoPuta(staNapisati, kolikoPuta);
+            base.NapisiTolikoPuta(staNapisati, kolikoPuta);
             Console.WriteLine("Napisano je: " + kolikoPuta + " puta");
 
         }

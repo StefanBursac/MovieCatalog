@@ -33,10 +33,10 @@ namespace Domaci
         public override string Configuration()
         {
             string gamingConfiguration = "\n" + brand + "\n"+model + "\n"+gamepad;
-            string wc = "";
-            if (waterCoolingSystem) { wc = "Has Water Cooling"; }
+            string wcs = "";
+            if (waterCoolingSystem) { wcs = "Has Water Cooling"; }
 
-            return base.Configuration()+gamingConfiguration+"\n"+wc;;
+            return base.Configuration()+gamingConfiguration+"\n"+wcs;;
             
         }
 

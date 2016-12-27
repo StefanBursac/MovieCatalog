@@ -30,19 +30,24 @@ namespace Movicatalog
 
             InitializeComponent();
             textBoxName.Text = movie.Name;
-            
+
             textBoxDirector.Text = movie.Director;
             textBoxDate.SelectedDate = movie.Date; 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Ok_Click(object sender, RoutedEventArgs e)
         {
             movie = new Movie();
             movie.Name = textBoxName.Text;
-            movie.Director = movie.Director;
-            
+            movie.Director = textBoxDirector.Text;
+            movie.Date = textBoxDate.SelectedDate.Value;
             this.DialogResult = true;
             this.Close();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

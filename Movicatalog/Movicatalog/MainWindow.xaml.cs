@@ -13,6 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
+using System.Xml.Serialization;
+using System.Data;
 
 namespace Movicatalog
 {
@@ -43,9 +47,14 @@ namespace Movicatalog
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            EditDialogWindow editMovie = new EditDialogWindow((Movie)dataGrid.SelectedItem);
-            editMovie.ShowDialog();
-
+            EditDialogWindow editWindow = new EditDialogWindow((Movie)dataGrid.SelectedItem);
+            if (editWindow.ShowDialog() == true)
+            {
+                Movies.Remove((Movie)dataGrid.SelectedItem);
+                Movies.Add(editWindow.movie);
+                dataGrid.Items.Refresh();
+                dataGrid.Items.Refresh();
+            }
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -61,15 +70,13 @@ namespace Movicatalog
           
         }
 
-
-
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             string exitQuestion = "Are You sure You want to Exit?";
             string exitWindowsTitle = "Exit";
             MessageBoxButton buttons = MessageBoxButton.YesNo;
             MessageBoxResult result;
-            result = MessageBox.Show(exitQuestion, exitWindowsTitle, buttons, MessageBoxImage.Question);
+            result = MessageBox.Show(exitQuestion, exitWindowsTitle, buttons, MessageBoxImage.Exclamation);
 
             if (result == MessageBoxResult.Yes)
             {
@@ -80,11 +87,20 @@ namespace Movicatalog
 
         private void Import_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            OpenFileDialog dlg = new OpenFileDialog();
             //dlg.DefaultExt =".xml",;|".json",; Default file extension 
             dlg.Filter = " XML Document(.xml)|*.xml| JSON Document (.json)|*.json"; // Filter files by extension
             dlg.ShowDialog();
             string filename = dlg.FileName;
+            //foreach (var s in filename)
+            //{
+            //    dataGrid.ItemsSource = s.ToString();
+            //}
+            dataGrid.ItemsSource = filename;
+            //DataSet dataSet = new DataSet();
+            // dataSet.ReadXml(filename);
+            
+           
         }
 
         /// <summary>
@@ -94,38 +110,50 @@ namespace Movicatalog
         /// <param name="e"></param>
         private void Export_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
             //dlg.DefaultExt =".xml",;|".json",; Default file extension 
             saveFileDialog.Filter = " XML Document(.xml)|*.xml| JSON Document (.json)|*.json"; // Filter files by extension
             saveFileDialog.ShowDialog();
             if (saveFileDialog.FileName != "")
             {
+                string fileName = saveFileDialog.FileName;
+                //XmlSerializer serialiser = new XmlSerializer(dataGrid.ItemsSource.GetType());
+                //FileStream fs = new FileStream(fileName);
                 // Saves the Image via a FileStream created by the OpenFile method.
-                System.IO.FileStream fs =
-                   (System.IO.FileStream)saveFileDialog.OpenFile();
-                // Saves the Image in the appropriate ImageFormat based upon the
-                // File type selected in the dialog box.
-                // NOTE that the FilterIndex property is one-based.
                
-                //switch (saveFileDialog.FilterIndex)
-                //{
-                //    case 1:
-                //        this.button2.Image.Save(fs,
-                //           System.Drawing.Imaging.ImageFormat.Jpeg);
-                //        break;
+                //TextWriter FileStream = new StreamWriter(@"C:\output.xml");
+                //serialiser.Serialize(FileStream,dataGrid.ItemsSource);
+               // FileStream.Close();
+                
+                // Create the TextWriter for the serialiser to use
+                //TextWriter Filestream = new StreamWriter(@"C:\output.xml");
+                //write to the file
+               
+                // Close the file
+                
+            }
 
-                //    case 2:
-                //        this.button2.Image.Save(fs,
-                //           System.Drawing.Imaging.ImageFormat.Bmp);
-                //        break;
-                //}
+            // Saves the Image in the appropriate ImageFormat based upon the
+            // File type selected in the dialog box.
+            // NOTE that the FilterIndex property is one-based.
 
-                fs.Close();
+            //switch (saveFileDialog.FilterIndex)
+            //{
+            //   case 1:
+            //        this.button2.Image.Save(fs,
+            //           System.Drawing.Imaging.ImageFormat.Jpeg);
+            //        break;
+
+            //    case 2:
+            //        this.button2.Image.Save(fs,
+            //           System.Drawing.Imaging.ImageFormat.Bmp);
+            //        break;
+            
             }
         }
 
 
 
-    }
+
 }
 
