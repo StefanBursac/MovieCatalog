@@ -19,28 +19,29 @@ namespace NewMovieCatalog
     /// </summary>
     public partial class AddEditWindow : Window
     {
-        
+        public Movie Movie { get; set; }
 
 
         public AddEditWindow()
         {
             InitializeComponent();
-            
-           
-
-
-
-
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MovieList list = new MovieList();
-            Movie m = new Movie();
-            m.MovieName = textBoxMovieName.Text;
-            m.Director = textBoxDirector.Text;
-            list.AllMovies.Add(m);
+
+            Movie = new Movie();
+            Movie.MovieName = textBoxMovieName.Text;
+            Movie.Director = textBoxDirector.Text;
+            // Movie Genre
+            Movie.Date = Date.SelectedDate.GetValueOrDefault();
+            DialogResult = true;
             Close();
+        }
+
+        private void textBoxMovieName_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+
         }
     }
 

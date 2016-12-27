@@ -4,21 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MojeVezbe
+namespace Console
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-            NasledjeneFunkcije funkcija = new NasledjeneFunkcije();
-
-            funkcija.IspisiNesto("Stefan",100);
+            Klasa k = new Klasa();
 
             
-
-
-            Console.ReadLine();
         }
     }
 }

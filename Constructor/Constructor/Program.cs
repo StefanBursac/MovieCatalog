@@ -4,21 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MojeVezbe
+namespace Constructor
 {
     class Program
     {
         static void Main(string[] args)
         {
 
-            NasledjeneFunkcije funkcija = new NasledjeneFunkcije();
+            MyConstructor constructor = new MyConstructor("Hello World");
 
-            funkcija.IspisiNesto("Stefan",100);
+            MyConstructor constructor2 = new MyConstructor(1);
 
-            
+            Console.ReadKey();
 
 
-            Console.ReadLine();
+
+
+
+
         }
     }
 }

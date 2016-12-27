@@ -4,19 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MojeVezbe
+namespace TempConverter
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Tempconvert tempC = new Tempconvert();
 
-            NasledjeneFunkcije funkcija = new NasledjeneFunkcije();
+            double fahrenhajt = tempC.CelsiusToFahrehajt(2);
 
-            funkcija.IspisiNesto("Stefan",100);
-
-            
-
+            Console.WriteLine(fahrenhajt);
 
             Console.ReadLine();
         }

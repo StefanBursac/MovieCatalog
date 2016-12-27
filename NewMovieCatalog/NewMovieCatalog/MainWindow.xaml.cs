@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,23 +30,24 @@ namespace NewMovieCatalog
             dataGrid.ItemsSource = movieList.AllMovies;
 
             movieList.AddMovie();
-           
+            
             
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            AddEditWindow AddWindow = new AddEditWindow();
-            AddWindow.Show();
-           
+            AddEditWindow addWindow = new AddEditWindow();
+ 
+            if (addWindow.ShowDialog().Value == true)
+            {
+                movieList.AllMovies.Add(addWindow.Movie);
+            }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             AddEditWindow editWindow = new AddEditWindow();
-            editWindow.Show();
-           // editWindow.textBoxMovieName = dataGrid.SelectedItem);?????
-
+            editWindow.ShowDialog();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
@@ -56,6 +58,20 @@ namespace NewMovieCatalog
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "XML file (*.xml)|*.xml|JSON file (*.json)|*.json";
+            saveDialog.ShowDialog();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "XML file (*.xml)|*.xml|JSON file (*.json)|*.json";
+            openFile.ShowDialog();
         }
     }
 
