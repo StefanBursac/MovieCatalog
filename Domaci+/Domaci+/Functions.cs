@@ -26,10 +26,7 @@ namespace Domaci_
             return prosek;
         }
 
-        
-
-
-        }
+    }
 
 }
 

@@ -17,6 +17,7 @@ namespace MojeVezbe
 
             
 
+            funkcija.IspisiNesto("Hello World",1000);
 
             Console.ReadLine();
         }
