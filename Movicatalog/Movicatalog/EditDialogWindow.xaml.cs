@@ -29,6 +29,7 @@ namespace Movicatalog
         {
 
             InitializeComponent();
+            
             textBoxName.Text = movie.Name;
 
             textBoxDirector.Text = movie.Director;

@@ -46,16 +46,23 @@ namespace Movicatalog
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
-        {
-            EditDialogWindow editWindow = new EditDialogWindow((Movie)dataGrid.SelectedItem);
-            if (editWindow.ShowDialog() == true)
+        {   try
             {
-                Movies.Remove((Movie)dataGrid.SelectedItem);
-                Movies.Add(editWindow.movie);
-                dataGrid.Items.Refresh();
-                dataGrid.Items.Refresh();
+                EditDialogWindow editWindow = new EditDialogWindow((Movie)dataGrid.SelectedItem);
+                if (editWindow.ShowDialog() == true)
+                {
+                    Movies.Remove((Movie)dataGrid.SelectedItem);
+                    Movies.Add(editWindow.movie);
+                    dataGrid.Items.Refresh();
+                    dataGrid.Items.Refresh();
+                }
             }
-        }
+            catch (Exception)
+            {
+                MessageBox.Show("Please select Movie","Select Movie",MessageBoxButton.OK,MessageBoxImage.Information);
+            }
+            }
+
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
