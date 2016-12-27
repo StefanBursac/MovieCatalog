@@ -15,14 +15,11 @@ namespace Domaci_
 
             funkcija.NapisiTolikoPuta("Ja se zovem Stefan", 20);
 
-
             Console.WriteLine("--------------------------------");
-
-
+            
             double prosek = funkcija.IzracunajProsekDvaBroja(10.5, 20.10);
 
             Console.WriteLine("Prosek je:" + prosek);
-
 
             Console.WriteLine("--------------------------------");
 
@@ -39,14 +36,7 @@ namespace Domaci_
         {
             base.NapisiTolikoPuta(staNapisati, kolikoPuta);
             Console.WriteLine("Napisano je: " + kolikoPuta + " puta");
-
-        }
-
-
-
-
-        
-
+        }     
 
         }
     }

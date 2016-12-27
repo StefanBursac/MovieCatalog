@@ -8,7 +8,7 @@ namespace Domaci_
 {
     public class Functions
     {
-
+        
         public virtual void NapisiTolikoPuta(string staNapisati, int kolikoPuta)
         {
             for (int i = 0; i < kolikoPuta; i++)

@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static Movicatalog.Movie;
 
 namespace Movicatalog
 {
@@ -27,6 +28,7 @@ namespace Movicatalog
         public AddDialogWindow()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,9 +37,6 @@ namespace Movicatalog
             movie.Name = Name.Text;
             movie.Director = Director.Text;
             movie.Date = date.SelectedDate.Value;
-            
-
-            
             this.DialogResult = true;
             this.Close();
         }
@@ -45,6 +44,14 @@ namespace Movicatalog
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        public Array Genres
+        {
+            get
+            {
+                return Enum.GetValues(typeof(Genre));
+            }
         }
     }
 }

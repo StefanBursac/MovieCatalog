@@ -59,10 +59,9 @@ namespace Movicatalog
             }
             catch (Exception)
             {
-                MessageBox.Show("Please select Movie","Select Movie",MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show("Please select Movie to Proceed","Select Movie",MessageBoxButton.OK,MessageBoxImage.Information);
             }
-            }
-
+        }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
@@ -89,7 +88,6 @@ namespace Movicatalog
             {
                 Close();
             }
-
         }
 
         private void Import_Click(object sender, RoutedEventArgs e)
@@ -98,69 +96,32 @@ namespace Movicatalog
             //dlg.DefaultExt =".xml",;|".json",; Default file extension 
             dlg.Filter = " XML Document(.xml)|*.xml| JSON Document (.json)|*.json"; // Filter files by extension
             dlg.ShowDialog();
-            string filename = dlg.FileName;
-            //foreach (var s in filename)
-            //{
-            //    dataGrid.ItemsSource = s.ToString();
-            //}
-            dataGrid.ItemsSource = filename;
-            //DataSet dataSet = new DataSet();
-            // dataSet.ReadXml(filename);
-            
-           
-        }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+            var filename = dlg.FileName;
+
+            XmlSerializer serialiser = new XmlSerializer(dataGrid.ItemsSource.GetType());
+            using (var sr = new StreamReader(filename))
+            {
+                Movies = (ObservableCollection<Movie>)serialiser.Deserialize(sr);
+                dataGrid.ItemsSource = Movies;
+            }     
+        }
+   
         private void Export_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            //dlg.DefaultExt =".xml",;|".json",; Default file extension 
+           
             saveFileDialog.Filter = " XML Document(.xml)|*.xml| JSON Document (.json)|*.json"; // Filter files by extension
             saveFileDialog.ShowDialog();
             if (saveFileDialog.FileName != "")
             {
                 string fileName = saveFileDialog.FileName;
-                //XmlSerializer serialiser = new XmlSerializer(dataGrid.ItemsSource.GetType());
-                //FileStream fs = new FileStream(fileName);
-                // Saves the Image via a FileStream created by the OpenFile method.
-               
-                //TextWriter FileStream = new StreamWriter(@"C:\output.xml");
-                //serialiser.Serialize(FileStream,dataGrid.ItemsSource);
-               // FileStream.Close();
-                
-                // Create the TextWriter for the serialiser to use
-                //TextWriter Filestream = new StreamWriter(@"C:\output.xml");
-                //write to the file
-               
-                // Close the file
-                
-            }
+                XmlSerializer serialiser = new XmlSerializer(dataGrid.ItemsSource.GetType());
 
-            // Saves the Image in the appropriate ImageFormat based upon the
-            // File type selected in the dialog box.
-            // NOTE that the FilterIndex property is one-based.
-
-            //switch (saveFileDialog.FilterIndex)
-            //{
-            //   case 1:
-            //        this.button2.Image.Save(fs,
-            //           System.Drawing.Imaging.ImageFormat.Jpeg);
-            //        break;
-
-            //    case 2:
-            //        this.button2.Image.Save(fs,
-            //           System.Drawing.Imaging.ImageFormat.Bmp);
-            //        break;
-            
+                TextWriter tw = new StreamWriter(fileName);
+                serialiser.Serialize(tw, Movies);
             }
         }
-
-
-
-
+    }
 }
 
