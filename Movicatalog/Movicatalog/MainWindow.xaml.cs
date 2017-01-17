@@ -31,7 +31,6 @@ namespace Movicatalog
         {   
             InitializeComponent();
             Movies = Movie.GetMovies();
-
             dataGrid.ItemsSource = Movies;
         }
 
@@ -50,10 +49,8 @@ namespace Movicatalog
             {
                 EditDialogWindow editWindow = new EditDialogWindow((Movie)dataGrid.SelectedItem);
                 if (editWindow.ShowDialog() == true)
-                {
-                    Movies.Remove((Movie)dataGrid.SelectedItem);
-                    Movies.Add(editWindow.movie);
-                    dataGrid.Items.Refresh();
+                { 
+                    
                     dataGrid.Items.Refresh();
                 }
             }
@@ -67,7 +64,7 @@ namespace Movicatalog
         {
             MessageBoxResult result;
 
-            result = MessageBox.Show("Are You sure You want to Delete selected item","Delete",MessageBoxButton.YesNoCancel,MessageBoxImage.Warning);
+            result = MessageBox.Show("Are You sure You want to Delete selected Movie","Delete",MessageBoxButton.YesNoCancel,MessageBoxImage.Warning);
 
             if (result == MessageBoxResult.Yes)
             {
@@ -92,6 +89,7 @@ namespace Movicatalog
 
         private void Import_Click(object sender, RoutedEventArgs e)
         {
+            
             OpenFileDialog dlg = new OpenFileDialog();
             //dlg.DefaultExt =".xml",;|".json",; Default file extension 
             dlg.Filter = " XML Document(.xml)|*.xml| JSON Document (.json)|*.json"; // Filter files by extension
@@ -106,21 +104,26 @@ namespace Movicatalog
                 dataGrid.ItemsSource = Movies;
             }     
         }
-   
+
         private void Export_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-           
-            saveFileDialog.Filter = " XML Document(.xml)|*.xml| JSON Document (.json)|*.json"; // Filter files by extension
-            saveFileDialog.ShowDialog();
-            if (saveFileDialog.FileName != "")
+            try
             {
-                string fileName = saveFileDialog.FileName;
-                XmlSerializer serialiser = new XmlSerializer(dataGrid.ItemsSource.GetType());
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-                TextWriter tw = new StreamWriter(fileName);
-                serialiser.Serialize(tw, Movies);
+                saveFileDialog.Filter = " XML Document(.xml)|*.xml| JSON Document (.json)|*.json"; // Filter files by extension
+                saveFileDialog.ShowDialog();
+                if (saveFileDialog.FileName != "")
+                {
+                    string fileName = saveFileDialog.FileName;
+                    XmlSerializer serialiser = new XmlSerializer(dataGrid.ItemsSource.GetType());
+
+                    TextWriter tw = new StreamWriter(fileName);
+                    serialiser.Serialize(tw, Movies);
+                }
+
             }
+            catch (Exception) { }
         }
     }
 }

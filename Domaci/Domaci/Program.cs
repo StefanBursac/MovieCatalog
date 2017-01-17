@@ -34,17 +34,23 @@ namespace Domaci
             desk.memory = " Kingston";
             desk.mouse = " Logitech";
             desk.tower = " Codegen";
-            desk.graphicsCard = "AtiRadeon";
-            desk.keyboard = "Logitech";
-            desk.webCamera = "LogitscWebCam";
-            
-            //Console.WriteLine(desk.Configuration());
+            desk.graphicsCard = " AtiRadeon";
+            desk.keyboard = " Logitech";
+            desk.webCamera = " LogitscWebCam";
+            desk.operatingSystem = " Windows 10";
+            desk.hardDrive = " Seagate 1TB";
+            desk.soundCard = " Realtek";
+
+            desk.ShowConfiguration();
 
 
             DesktopComputer deskKomp = new DesktopComputer();
             deskKomp.VrsiComputaciju();
             deskKomp.UcitavaOperativniSistem();
             deskKomp.UpisujeUHardDisk();
+
+            Console.WriteLine("------------------------------");
+
 
             Laptop lap = new Laptop();
             lap.cpu = " Intel ";
@@ -59,40 +65,33 @@ namespace Domaci
             
             lap.ShowConfiguration();
 
-            lap.CrtanjePoekranu();
-            lap.Unostastaturom();
-            lap.UpravljanjeMisom();
-
             Console.WriteLine();
             Console.WriteLine();
 
             GamingDesktopComputer razer = new GamingDesktopComputer();
 
-            razer.brand = "Razer";
-            razer.cpu = "IntelCabyLake";
-            razer.memory = "Kingston 8 gigabyte";
-            razer.hardDrive = "Seagate 500gb";
-            razer.motherBoard = "Intel";
-            razer.gamepad = "Xbox One Controller";
-            razer.waterCoolingSystem = true;
-            razer.operatingSystem = "Windows10";
-            razer.model = "Blade";
-            razer.Monitor = "Nema";
-            razer.graphicsCard = "Amd Radeon RX 480";
-            razer.soundCard = "RealTek";
-
-           // Console.WriteLine(razer.Configuration());
-
             razer.VrsiComputaciju();
             razer.upravljanjeGamepadom();
             razer.UpravljanjeMisom();
 
-           
-            Console.ReadKey();
+            Console.WriteLine("---------------------------------------");
 
             
 
 
+            Store prodavnica1 = new Store();
+
+            prodavnica1.DodajProdavnicu("Positive", "Danila Kisa",5);
+            
+            prodavnica1.IspisiProdavnicu();
+
+            Store prodavnica2 = new Store();
+
+            prodavnica2.DodajProdavnicu("Gigatron","TC Bazar",10);
+
+            prodavnica2.IspisiProdavnicu();
+
+            Console.ReadKey();
         }
     }
 }

@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace Constructor
 {
-    class MyConstructor
+    public class MyConstructor
     {
+
+        int i { get; set; }
+
 
         public MyConstructor(string upis)
         {
             Console.WriteLine(upis);
         }
 
-        public MyConstructor(int upis1)
+        public MyConstructor(int upis)
         {
-            Console.WriteLine(upis1);
+            Console.WriteLine(upis);
         }
 
 

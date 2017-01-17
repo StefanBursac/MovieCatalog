@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domaci
 {
-    class Laptop : DesktopComputer
+    class Laptop : Computer
     {
        public string screenSize;
        public bool touchscreen;
@@ -28,9 +28,7 @@ namespace Domaci
             VrsiComputaciju();
             UcitavaOperativniSistem();
             UpisujeUHardDisk();
-            PrikazivanjeSlikeNaEkran();
-            UpravljanjeMisom();
-            Unostastaturom();
+        
         }
 
         public override void ShowConfiguration()

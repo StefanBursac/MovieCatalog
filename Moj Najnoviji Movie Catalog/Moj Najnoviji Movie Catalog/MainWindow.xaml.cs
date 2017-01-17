@@ -27,8 +27,6 @@ namespace Moj_Najnoviji_Movie_Catalog
             InitializeComponent();
             
             AddWindow add = new AddWindow();
-            add.button_Click();
-            DataContext = MainWindow;
             
         }
 

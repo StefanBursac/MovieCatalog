@@ -32,13 +32,17 @@ namespace Movicatalog
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {   
-            movie = new Movie();
-            movie.Name = Name.Text;
-            movie.Director = Director.Text;
-            movie.Date = date.SelectedDate.Value;
-            this.DialogResult = true;
-            this.Close();
+        {
+            try
+            {
+                movie = new Movie();
+                movie.Name = Name.Text;
+                movie.Director = Director.Text;
+                movie.Date = date.SelectedDate.Value;
+                this.DialogResult = true;
+                this.Close();
+            }
+            catch (Exception) { }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

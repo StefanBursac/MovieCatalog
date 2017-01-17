@@ -33,7 +33,7 @@
 
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="3" Margin="5">
             <TextBox x:Name="textBoxName" Width=" 150" Height="25" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
-            <ComboBox x:Name="ComboBox" Grid.Row="1" Width="150" Height="25" Margin="5" Grid.Column="1" HorizontalAlignment="Left" DataContext="Genre" />
+            <ComboBox x:Name="ComboBox" Grid.Row="1" Width="150" Height="25" Margin="5" Grid.Column="1" HorizontalAlignment="Left" />
             <TextBox Name="textBoxDirector" Width=" 150" Height="25" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Grid.Column="1"/>
 
             <DatePicker Name="textBoxDate" Grid.Row="3" Grid.Column="1" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />

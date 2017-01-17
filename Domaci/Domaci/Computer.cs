@@ -42,7 +42,7 @@ namespace Domaci
         }
 
     
-        public virtual void ShowConfiguration()
+        public virtual void ShowConfiguration() // virtual da bih mogao da overrajdujem i uradim polimorfizam
     {
         Console.Write(
             "MotherBoard:"+motherBoard + "\n"+
@@ -54,9 +54,5 @@ namespace Domaci
             "OperatingSystem:"+ operatingSystem);        
     }
 
-
     }
-
-
-
 }
